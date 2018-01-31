@@ -12,7 +12,7 @@
                 <div class="uploadphoto-data">
                     <div class="foto" :style="{ backgroundImage: 'url(' + image + ')', width: value + '%', height: value + '%' }">
                     </div>
-                    <sel-bowties :bowtie="selectBowtie" :valueBowtie="valueBowtie"></sel-bowties>
+                    <sel-bowties :bowtie="selectBowtie" :valueBowtie="selectBowtie"></sel-bowties>
                 </div>
             </div>
         </div>
@@ -33,7 +33,7 @@
 
 </template>
 <script>
-    import SelectedBowtie from '../components/SelectedBowtie.vue'
+    import SelectedBowtie from './SelectedBowtie.vue'
 
     export default {
         props: ["selectBowtie"],

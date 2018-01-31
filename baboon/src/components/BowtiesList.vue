@@ -3,7 +3,7 @@
         <div class="bowties-ttl">Выберите бабочку</div>
         <div class="select-line">
             <div class="select-line__ttl">Цвет</div>
-            <select name="" id="" v-model="color">
+            <select v-model="color">
                 <option value="">Все</option>
                 <option value="red">Красный</option>
                 <option value="blue">Синий</option>
@@ -16,70 +16,19 @@
                     :key="bowtieItem.id"
                     :bowtieItem="bowtieItem"
                     :class = "{active: activeItem==bowtieItem.id}"
-                    @click.native = "activeItem=bowtieItem.id"
-                    @selectBowtie="selectBowtie">
+                    @click.native = "tst(bowtieItem.id,bowtieItem.url)">
             </bowtie>
         </transition-group>
     </div>
 </template>
 <script>
-    import BowtieItem from '../components/BowtieItem.vue'
-
-    const BowtiesArray = [
-        {
-            id: 1,
-            art: '101BBK',
-            description: 'Описание',
-            url: '/images/bowties/101BBK_1.png',
-            color: 'red',
-            price: 600
-        },
-        {
-            id: 2,
-            art: '101BBK',
-            description: 'Описание',
-            url: '/images/bowties/101BBK_2.png',
-            color: 'violet',
-            price: 600
-        },
-        {
-            id: 3,
-            art: '105BBK',
-            description: 'Описание',
-            url: '/images/bowties/105BBK_1.png',
-            color: 'blue',
-            price: 600
-        },
-        {
-            id: 4,
-            art: '107BBK',
-            description: 'Описание',
-            url: '/images/bowties/107BBK_1.png',
-            color: 'blue',
-            price: 600
-        },
-        {
-            id: 5,
-            art: '109BBK',
-            description: 'Описание',
-            url: '/images/bowties/109BBK_1.png',
-            color: 'brown',
-            price: 500
-        },
-        {
-            id: 6,
-            art: '109BBK',
-            description: 'Описание',
-            url: '/images/bowties/109BBK_2.png',
-            color: 'red',
-            price: 400
-        }
-    ];
+    import BowtieItem from './BowtieItem.vue';
+    import BowtieService from '../BowtieService.js'
 
     export default {
         data(){
             return{
-                BowtiesArray,
+                BowtiesArray: [],
                 activeItem: null,
                 color: ""
             }
@@ -107,9 +56,16 @@
         components:{
             'bowtie': BowtieItem
         },
+        created(){
+            this.BowtiesArray = BowtieService.BowtiesArray;
+        },
         methods: {
             selectBowtie(url){
                 this.$emit("selectBowtie", url)
+            },
+            tst(id,url){
+                this.activeItem = id;
+                this.$emit("selectBowtie", url);
             }
         }
     }

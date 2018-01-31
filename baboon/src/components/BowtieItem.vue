@@ -1,21 +1,10 @@
 <template>
-    <div class="bowtie"
-         :style="{ backgroundImage: 'url(' + bowtieItem.url + ')' }"
-         @click="selectItem()">
+    <div class="bowtie" :style="{ backgroundImage: 'url(' + bowtieItem.url + ')' }">
     </div>
 </template>
 <script>
     export default {
-        props: ["bowtieItem"],
-        data(){
-            return{
-            }
-        },
-        methods: {
-            selectItem(){
-                this.$emit("selectBowtie", this.bowtieItem.url);
-            }
-        }
+        props: ["bowtieItem"]
     }
 </script>
 <style lang="scss" scoped>
