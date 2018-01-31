@@ -39,7 +39,7 @@
     export default {
         data(){
             return{
-                image: '/images/men.jpg',
+                image: 'images/men.jpg',
                 value: 100,
                 bowtie: ''
             }
@@ -89,7 +89,7 @@
     }
     .photo-frame{
         width: 100%;
-        height: 600px;
+        height: 615px;
         border: 1px solid #ccc;
         position: relative;
         display: flex;

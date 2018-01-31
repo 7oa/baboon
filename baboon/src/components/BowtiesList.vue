@@ -1,21 +1,34 @@
 <template>
     <div class="bowties-bl">
+
         <div class="bowties-ttl">Выберите бабочку</div>
-        <div class="select-line">
-            <div class="select-line__ttl">Цвет</div>
-            <select v-model="color">
-                <option value="">Все</option>
-                <option value="red">Красный</option>
-                <option value="blue">Синий</option>
-                <option value="brown">Коричневый</option>
-                <option value="violet">Фиолетовый</option>
-            </select>
+
+        <div class="row">
+            <div class="col">
+                <div class="select-line">
+                    <div class="select-line__ttl">Цвет</div>
+                    <select class="form-control" v-model="color">
+                        <option value="">Все</option>
+                        <option value="red">Красный</option>
+                        <option value="blue">Синий</option>
+                        <option value="brown">Коричневый</option>
+                        <option value="violet">Фиолетовый</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col">
+                Вид:
+                <a @click="view='grid'">Плитка</a>
+                <a @click="view='list'">Список</a>
+            </div>
         </div>
-        <transition-group name="bowtiestranz" tag="div" class="bowties">
+
+        <transition-group name="bowtiestranz" tag="div" class="bowties" :class="view">
             <bowtie v-for="bowtieItem in filteredItems"
                     :key="bowtieItem.id"
                     :bowtieItem="bowtieItem"
-                    :class = "{active: activeItem==bowtieItem.id}"
+                    :active = "activeItem==bowtieItem.id? 'active' : '' "
+                    :view = "view"
                     @click.native = "clickOnBowtie(bowtieItem.id,bowtieItem.url)">
             </bowtie>
         </transition-group>
@@ -30,7 +43,8 @@
             return{
                 BowtiesArray: [],
                 activeItem: null,
-                color: ""
+                color: "",
+                view: 'grid'
             }
         },
         computed:{
@@ -79,8 +93,15 @@
         color: #4b322e;
     }
     .bowties{
-        display: flex;
-        flex-wrap: wrap;
+        max-height: 500px;
+        overflow-y: auto;
+        &.list{
+
+        }
+        &.grid{
+            display: flex;
+            flex-wrap: wrap;
+        }
     }
     .select-line{
         display: flex;

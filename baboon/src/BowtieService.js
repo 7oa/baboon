@@ -5,7 +5,7 @@ const BowtiesArray = [
         id: 1,
         art: '101BBK',
         description: 'Описание',
-        url: '/images/bowties/101BBK_1.png',
+        url: 'images/bowties/101BBK_1.png',
         color: 'red',
         price: 600
     },
@@ -13,31 +13,31 @@ const BowtiesArray = [
         id: 2,
         art: '101BBK2',
         description: 'Описание',
-        url: '/images/bowties/101BBK_2.png',
+        url: 'images/bowties/101BBK_2.png',
         color: 'violet',
-        price: 600
+        price: 650
     },
     {
         id: 3,
         art: '105BBK',
         description: 'Описание',
-        url: '/images/bowties/105BBK_1.png',
+        url: 'images/bowties/105BBK_1.png',
         color: 'blue',
-        price: 600
+        price: 670
     },
     {
         id: 4,
         art: '107BBK',
         description: 'Описание',
-        url: '/images/bowties/107BBK_1.png',
+        url: 'images/bowties/107BBK_1.png',
         color: 'blue',
-        price: 600
+        price: 680
     },
     {
         id: 5,
         art: '109BBK',
         description: 'Описание',
-        url: '/images/bowties/109BBK_1.png',
+        url: 'images/bowties/109BBK_1.png',
         color: 'brown',
         price: 500
     },
@@ -45,7 +45,7 @@ const BowtiesArray = [
         id: 6,
         art: '109BBK2',
         description: 'Описание',
-        url: '/images/bowties/109BBK_2.png',
+        url: 'images/bowties/109BBK_2.png',
         color: 'red',
         price: 400
     }
