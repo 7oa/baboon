@@ -1,10 +1,10 @@
 <template>
     <div class="container">
         <div class="right-col">
-            <app-uploadimg :selectBowtie="bowtie"></app-uploadimg>
+            <app-uploadimg></app-uploadimg>
         </div>
         <div class="left-col">
-            <app-bowties @selectBowtie="selectBowtie"></app-bowties>
+            <app-bowties></app-bowties>
         </div>
     </div>
 </template>
@@ -14,19 +14,9 @@
     import Bowties from './components/BowtiesList.vue'
 
     export default{
-        data(){
-            return{
-                bowtie: ''
-            }
-        },
         components:{
             'app-uploadimg': UploadImg,
             'app-bowties': Bowties
-        },
-        methods: {
-            selectBowtie(url){
-                this.bowtie = url;
-            }
         }
     }
 </script>

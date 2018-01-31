@@ -11,7 +11,7 @@ const BowtiesArray = [
     },
     {
         id: 2,
-        art: '101BBK',
+        art: '101BBK2',
         description: 'Описание',
         url: '/images/bowties/101BBK_2.png',
         color: 'violet',
@@ -43,7 +43,7 @@ const BowtiesArray = [
     },
     {
         id: 6,
-        art: '109BBK',
+        art: '109BBK2',
         description: 'Описание',
         url: '/images/bowties/109BBK_2.png',
         color: 'red',
@@ -57,7 +57,10 @@ export default new Vue({
     },
     methods:{
         selectBowtie(url){
-            this.$emit("selectBowtie", url)
+            this.$emit("selectBowtie", url);
+        },
+        removeImage(){
+            this.$emit("removeImage");
         }
     }
 });

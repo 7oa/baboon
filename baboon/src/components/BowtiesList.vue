@@ -16,7 +16,7 @@
                     :key="bowtieItem.id"
                     :bowtieItem="bowtieItem"
                     :class = "{active: activeItem==bowtieItem.id}"
-                    @click.native = "tst(bowtieItem.id,bowtieItem.url)">
+                    @click.native = "clickOnBowtie(bowtieItem.id,bowtieItem.url)">
             </bowtie>
         </transition-group>
     </div>
@@ -58,14 +58,14 @@
         },
         created(){
             this.BowtiesArray = BowtieService.BowtiesArray;
+            BowtieService.$on("removeImage", () => {
+                this.activeItem = null;
+            })
         },
         methods: {
-            selectBowtie(url){
-                this.$emit("selectBowtie", url)
-            },
-            tst(id,url){
+            clickOnBowtie(id,url){
                 this.activeItem = id;
-                this.$emit("selectBowtie", url);
+                BowtieService.selectBowtie(url);
             }
         }
     }

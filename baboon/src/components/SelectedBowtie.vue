@@ -18,15 +18,13 @@
     import VueDraggableResizable from 'vue-draggable-resizable'
 
     export default {
-        props: ["bowtie", "valueBowtie"],
+        props: ["bowtie"],
         data(){
             return{
             }
         },
         components:{
             VueDraggableResizable
-        },
-        methods: {
         }
     }
 </script>

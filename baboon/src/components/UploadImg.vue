@@ -12,7 +12,7 @@
                 <div class="uploadphoto-data">
                     <div class="foto" :style="{ backgroundImage: 'url(' + image + ')', width: value + '%', height: value + '%' }">
                     </div>
-                    <sel-bowties :bowtie="selectBowtie" :valueBowtie="selectBowtie"></sel-bowties>
+                    <sel-bowties :bowtie="bowtie"></sel-bowties>
                 </div>
             </div>
         </div>
@@ -33,15 +33,21 @@
 
 </template>
 <script>
-    import SelectedBowtie from './SelectedBowtie.vue'
+    import SelectedBowtie from './SelectedBowtie.vue';
+    import BowtieService from '../BowtieService.js';
 
     export default {
-        props: ["selectBowtie"],
         data(){
             return{
                 image: '/images/men.jpg',
-                value: 100
+                value: 100,
+                bowtie: ''
             }
+        },
+        created(){
+            BowtieService.$on("selectBowtie", (selectedBowtie) => {
+                this.bowtie = selectedBowtie;
+            })
         },
         components: {
             'sel-bowties': SelectedBowtie
@@ -66,7 +72,8 @@
             removeImage: function (e) {
                 this.image = '';
                 this.value = 100;
-                this.selectBowtie = "";
+                this.bowtie = '';
+                BowtieService.removeImage();
             }
         }
     }
