@@ -1,19 +1,26 @@
 <template>
     <div>
         <div class="photo-frame">
-            <div v-if="!image">
-                <div class="uploadphoto-mess">
-                    <h2>Загрузите фото</h2>
-                    <div class="noimage"></div>
-                    <input type="file" @change="onFileChange">
-                </div>
+            <div class="uploadphoto-mess" v-if="!image">
+                <h2>Загрузите фото</h2>
+                <div class="noimage"></div>
+                <input type="file" @change="onFileChange">
             </div>
-            <div v-else>
-                <div class="uploadphoto-data">
+            <div class="uploadphoto-data" v-else>
+                <vue-draggable-resizable class="photo-resize"
+                        :resizable="false"
+                        :w="470" :h="615">
                     <div class="foto" :style="{ backgroundImage: 'url(' + image + ')', width: value + '%', height: value + '%' }">
                     </div>
+                </vue-draggable-resizable>
+                <vue-draggable-resizable class="drag-res" v-if="bowtie"
+                                         :parent="true"
+                                         :active="true"
+                                         :handles="['tl','tr','bl','br']"
+                                         :w="100" :h="80"
+                                         :y="200" :x="190">
                     <sel-bowties :bowtie="bowtie"></sel-bowties>
-                </div>
+                </vue-draggable-resizable>
             </div>
         </div>
         <div v-if="image">
@@ -35,6 +42,7 @@
 <script>
     import SelectedBowtie from './SelectedBowtie.vue';
     import BowtieService from '../BowtieService.js';
+    import VueDraggableResizable from 'vue-draggable-resizable'
 
     export default {
         data(){
@@ -50,7 +58,8 @@
             })
         },
         components: {
-            'sel-bowties': SelectedBowtie
+            'sel-bowties': SelectedBowtie,
+            VueDraggableResizable
         },
         methods: {
             onFileChange(e) {
@@ -114,6 +123,8 @@
         right: 0;
         left: 0;
         bottom: 0;
+    }
+    .photo-resize{
         display: flex;
         align-items: center;
         justify-content: center;

@@ -35,8 +35,8 @@
 </script>
 <style lang="scss" scoped>
     .bowtie-grid{
-        width: 137px;
-        height: 137px;
+        width: 130px;
+        height: 130px;
         margin: 9px;
         flex: 0 0 auto;
         margin-bottom: 10px;
@@ -53,7 +53,7 @@
     }
     .bowtie-list{
         display: flex;
-        margin-bottom: 20px;
+        margin: 10px;
         border: 2px solid transparent;
         border-radius: 10px;
         padding: 10px;

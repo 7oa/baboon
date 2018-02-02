@@ -1,25 +1,22 @@
 <template>
     <div class="bowties-bl">
-
-        <div class="bowties-ttl">Выберите бабочку</div>
-
-        <div class="row">
-            <div class="col">
-                <div class="select-line">
-                    <div class="select-line__ttl">Цвет</div>
-                    <select class="form-control" v-model="color">
-                        <option value="">Все</option>
-                        <option value="red">Красный</option>
-                        <option value="blue">Синий</option>
-                        <option value="brown">Коричневый</option>
-                        <option value="violet">Фиолетовый</option>
-                    </select>
+        <div class="tools">
+            <div class="row">
+                <div class="col">
+                    <div class="select-line">
+                        <div class="select-line__ttl">Цвет</div>
+                        <select class="form-control" v-model="color">
+                            <option v-for="colors in ColorsArray" :value="colors.value">{{colors.ttl}}</option>
+                        </select>
+                    </div>
                 </div>
-            </div>
-            <div class="col">
-                Вид:
-                <a @click="view='grid'">Плитка</a>
-                <a @click="view='list'">Список</a>
+                <div class="col">
+                    <div class="view-list">
+                        <a @click="view='grid'" class="view view_grid" :class="view=='grid'?'active':''"></a>
+                        <a @click="view='list'" class="view view_list" :class="view=='list'?'active':''"></a>
+                    </div>
+
+                </div>
             </div>
         </div>
 
@@ -42,6 +39,7 @@
         data(){
             return{
                 BowtiesArray: [],
+                ColorsArray: [],
                 activeItem: null,
                 color: "",
                 view: 'grid'
@@ -72,6 +70,7 @@
         },
         created(){
             this.BowtiesArray = BowtieService.BowtiesArray;
+            this.ColorsArray = BowtieService.colors;
             BowtieService.$on("removeImage", () => {
                 this.activeItem = null;
             })
@@ -85,6 +84,16 @@
     }
 </script>
 <style lang="scss" scoped>
+    .bowties-bl{
+        border: 1px solid #ccc;
+        height: 615px;
+    }
+    .tools{
+        border-bottom: 1px solid #ccc;
+        padding: 10px;
+        box-sizing: border-box;
+        background-color: #eee;
+    }
     .bowties-ttl{
         text-align: center;
         font-size: 24px;
@@ -93,7 +102,7 @@
         color: #4b322e;
     }
     .bowties{
-        max-height: 500px;
+        max-height: 554px;
         overflow-y: auto;
         &.list{
 
@@ -106,7 +115,6 @@
     .select-line{
         display: flex;
         align-items: center;
-        margin-bottom: 10px;
         &__ttl{
             flex:  0 0 auto;
             margin-right: 10px;
@@ -125,5 +133,36 @@
         &-enter,
         &-leave-to { opacity: 0 }
         &-enter { transform: scale(0.9) }
+    }
+    .view-list{
+        display: flex;
+        justify-content: flex-end;
+    }
+    .view{
+        display: block;
+        width: 38px;
+        height: 38px;
+        cursor: pointer;
+        background-size: 60%;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-left: 5px;
+        border: 1px solid #ccc;
+        padding: 5px;
+        border-radius: 3px;
+        background-color: #fff;
+        transition: .5s;
+        &_grid{
+            background-image: url('/images/menu.svg');
+        }
+        &_list{
+            background-image: url('/images/list-with-dots.svg');
+        }
+        &.active{
+            border-color: rgba(255, 50, 50, 0.5);
+            -webkit-box-shadow: 0px 0px 5px 0px rgba(255, 50, 50, 0.75);
+            -moz-box-shadow:    0px 0px 5px 0px rgba(255, 50, 50, 0.75);
+            box-shadow: 0px 0px 5px 0px rgba(255, 50, 50, 0.75);
+        }
     }
 </style>
