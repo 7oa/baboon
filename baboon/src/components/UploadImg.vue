@@ -2,7 +2,7 @@
     <div>
         <div class="photo-frame">
             <div class="uploadphoto-mess" v-if="!image">
-                <h2>Загрузите фото</h2>
+                <h2>загрузите фото</h2>
                 <div class="noimage"></div>
                 <input type="file" @change="onFileChange">
             </div>
@@ -23,7 +23,7 @@
                 </vue-draggable-resizable>
             </div>
         </div>
-        <div v-if="image">
+        <div v-if="image" class="bootom-panel">
             <div class="params-line">
                 <div class="params-label">Размер фото: {{value}}%</div>
                 <div class="params-changer">
@@ -31,8 +31,8 @@
                 </div>
 
             </div>
-            <div>
-                <button @click="removeImage">Удалить фото</button>
+            <div class="">
+                <button @click="removeImage" class="btn btn-secondary">Удалить фото</button>
             </div>
         </div>
 
@@ -47,7 +47,7 @@
     export default {
         data(){
             return{
-                image: 'images/men.jpg',
+                image: '',
                 value: 100,
                 bowtie: ''
             }

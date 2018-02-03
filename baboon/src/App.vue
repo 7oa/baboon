@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="wrapper content">
         <div class="right-col">
             <app-uploadimg></app-uploadimg>
         </div>
@@ -22,17 +22,4 @@
 </script>
 
 <style lang="scss">
-    .container{
-        width: 1000px;
-        margin: 0 auto;
-        display: flex;
-    }
-    .right-col,
-    .left-col{
-        width: 48%;
-        flex: 0 0 auto;
-    }
-    .right-col{
-        margin-right: 2%;
-    }
 </style>
