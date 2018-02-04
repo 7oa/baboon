@@ -8,9 +8,9 @@
             </div>
             <div class="uploadphoto-data" v-else>
                 <vue-draggable-resizable class="photo-resize"
-                        :resizable="false"
-                        :w="478" :h="615">
-                    <div class="foto" :style="{ backgroundImage: 'url(' + image + ')', width: value + '%', height: value + '%' }">
+                                         :resizable="false"
+                                         :w.sync="propWidth" :h.sync="propHeight">
+                    <div class="foto" :style="{ backgroundImage: 'url(' + image + ')', width: propWidth + 'px', height: propHeight + 'px' }">
                     </div>
                 </vue-draggable-resizable>
                 <vue-draggable-resizable class="drag-res" v-if="bowtie"
@@ -49,17 +49,28 @@
             return{
                 image: '',
                 value: 100,
-                bowtie: ''
+                bowtie: '',
+                width: 478,
+                height: 618
             }
+        },
+        components: {
+            'sel-bowties': SelectedBowtie,
+            VueDraggableResizable
+        },
+        computed:{
+            propWidth(){
+                return this.width*this.value/100
+            },
+            propHeight(){
+                return this.height*this.value/100
+            },
+
         },
         created(){
             BowtieService.$on("selectBowtie", (selectedBowtie) => {
                 this.bowtie = selectedBowtie;
             })
-        },
-        components: {
-            'sel-bowties': SelectedBowtie,
-            VueDraggableResizable
         },
         methods: {
             onFileChange(e) {
@@ -72,9 +83,17 @@
                 var image = new Image();
                 var reader = new FileReader();
                 var vm = this;
-
                 reader.onload = (e) => {
                     vm.image = e.target.result;
+
+                    var img = new Image;
+                    image.onload = function() {
+                        vm.width = this.width;
+                        vm.height = this.height;
+                        console.log(this.width);
+                        console.log(this.height);
+                    };
+                    image.src = reader.result;
                 };
                 reader.readAsDataURL(file);
             },
@@ -125,9 +144,9 @@
         bottom: 0;
     }
     .photo-resize{
-        /*display: flex;*/
-        /*align-items: center;*/
-        /*justify-content: center;*/
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .foto{
         width: 100%;
