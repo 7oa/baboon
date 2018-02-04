@@ -45,6 +45,10 @@ const colors = [
         value: 'black',
         ttl: 'Черный'
     },
+    {
+        value: 'white',
+        ttl: 'Белый'
+    },
 ];
 const BowtiesArray = [
     {
@@ -301,6 +305,230 @@ const BowtiesArray = [
         description: 'Описание',
         url: 'images/bowties/113BBK_1.png',
         color: 'gray,black',
+        price: 690
+    },
+    {
+        id: 34,
+        art: '61BBK_1',
+        description: 'Описание',
+        url: 'images/bowties/61BBK_1.png',
+        color: 'green',
+        price: 690
+    },
+    {
+        id: 35,
+        art: '61BBK_2',
+        description: 'Описание',
+        url: 'images/bowties/61BBK_2.png',
+        color: 'yellow,white',
+        price: 690
+    },
+    {
+        id: 36,
+        art: '63BBK',
+        description: 'Описание',
+        url: 'images/bowties/63BBK.png',
+        color: 'black',
+        price: 690
+    },
+    {
+        id: 37,
+        art: '67BBK_1',
+        description: 'Описание',
+        url: 'images/bowties/67BBK_1.png',
+        color: 'blue',
+        price: 690
+    },
+    {
+        id: 38,
+        art: '69BBK_1',
+        description: 'Описание',
+        url: 'images/bowties/69BBK_1.png',
+        color: 'blue',
+        price: 690
+    },
+    {
+        id: 39,
+        art: '69BBK_2',
+        description: 'Описание',
+        url: 'images/bowties/69BBK_2.png',
+        color: 'pink',
+        price: 690
+    },
+    {
+        id: 40,
+        art: '77BBK_1',
+        description: 'Описание',
+        url: 'images/bowties/77BBK_1.png',
+        color: 'red,orange',
+        price: 690
+    },
+    {
+        id: 41,
+        art: '77BBK_2',
+        description: 'Описание',
+        url: 'images/bowties/77BBK_2.png',
+        color: 'red,orange,black',
+        price: 690
+    },
+    {
+        id: 42,
+        art: '78BBK_1',
+        description: 'Описание',
+        url: 'images/bowties/78BBK_1.png',
+        color: 'gray',
+        price: 690
+    },
+    {
+        id: 43,
+        art: '78BBK_2',
+        description: 'Описание',
+        url: 'images/bowties/78BBK_2.png',
+        color: 'gray',
+        price: 690
+    },
+    {
+        id: 44,
+        art: '80BBK_1',
+        description: 'Описание',
+        url: 'images/bowties/80BBK_1.png',
+        color: 'blue',
+        price: 690
+    },
+    {
+        id: 45,
+        art: '80BBK_2',
+        description: 'Описание',
+        url: 'images/bowties/80BBK_2.png',
+        color: 'orange,brown',
+        price: 690
+    },
+    {
+        id: 46,
+        art: '82BBK_1',
+        description: 'Описание',
+        url: 'images/bowties/82BBK_1.png',
+        color: 'black,blue,gray',
+        price: 690
+    },
+    {
+        id: 47,
+        art: '82BBK_2',
+        description: 'Описание',
+        url: 'images/bowties/82BBK_2.png',
+        color: 'red,blue',
+        price: 690
+    },
+    {
+        id: 48,
+        art: '83BBK_1',
+        description: 'Описание',
+        url: 'images/bowties/83BBK_1.png',
+        color: 'brown,gray',
+        price: 690
+    },
+    {
+        id: 49,
+        art: '83BBK_2',
+        description: 'Описание',
+        url: 'images/bowties/83BBK_2.png',
+        color: 'brown,gray',
+        price: 690
+    },
+    {
+        id: 50,
+        art: '85BBK_1',
+        description: 'Описание',
+        url: 'images/bowties/85BBK_1.png',
+        color: 'green',
+        price: 690
+    },
+    {
+        id: 51,
+        art: '85BBK_2',
+        description: 'Описание',
+        url: 'images/bowties/85BBK_2.png',
+        color: 'orange',
+        price: 690
+    },
+    {
+        id: 52,
+        art: '86BBK_1',
+        description: 'Описание',
+        url: 'images/bowties/86BBK_1.png',
+        color: 'white',
+        price: 690
+    },
+    {
+        id: 53,
+        art: '86BBK_2',
+        description: 'Описание',
+        url: 'images/bowties/86BBK_2.png',
+        color: 'gray',
+        price: 690
+    },
+    {
+        id: 54,
+        art: '87BBK_1',
+        description: 'Описание',
+        url: 'images/bowties/87BBK_1.png',
+        color: 'gray,black',
+        price: 690
+    },
+    {
+        id: 55,
+        art: '87BBK_2',
+        description: 'Описание',
+        url: 'images/bowties/87BBK_2.png',
+        color: 'gray,black,brown',
+        price: 690
+    },
+    {
+        id: 56,
+        art: '90BBK_1',
+        description: 'Описание',
+        url: 'images/bowties/90BBK_1.png',
+        color: 'orange,blue',
+        price: 690
+    },
+    {
+        id: 57,
+        art: '90BBK_2',
+        description: 'Описание',
+        url: 'images/bowties/90BBK_2.png',
+        color: 'gray,black',
+        price: 690
+    },
+    {
+        id: 58,
+        art: '93BBK_1',
+        description: 'Описание',
+        url: 'images/bowties/93BBK_1.png',
+        color: 'white',
+        price: 690
+    },
+    {
+        id: 59,
+        art: '93BBK_2',
+        description: 'Описание',
+        url: 'images/bowties/93BBK_2.png',
+        color: 'gray,black',
+        price: 690
+    },
+    {
+        id: 60,
+        art: '94BBK_1',
+        description: 'Описание',
+        url: 'images/bowties/94BBK_1.png',
+        color: 'orange',
+        price: 690
+    },
+    {
+        id: 61,
+        art: '94BBK_2',
+        description: 'Описание',
+        url: 'images/bowties/94BBK_2.png',
+        color: 'brown',
         price: 690
     }
 ];

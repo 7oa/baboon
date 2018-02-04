@@ -9,7 +9,7 @@
             <div class="uploadphoto-data" v-else>
                 <vue-draggable-resizable class="photo-resize"
                         :resizable="false"
-                        :w="470" :h="615">
+                        :w="478" :h="615">
                     <div class="foto" :style="{ backgroundImage: 'url(' + image + ')', width: value + '%', height: value + '%' }">
                     </div>
                 </vue-draggable-resizable>
@@ -125,9 +125,9 @@
         bottom: 0;
     }
     .photo-resize{
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        /*display: flex;*/
+        /*align-items: center;*/
+        /*justify-content: center;*/
     }
     .foto{
         width: 100%;

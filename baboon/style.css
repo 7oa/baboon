@@ -61,11 +61,8 @@ body{
 }
 .right-col,
 .left-col{
-    width: 48%;
+    width: 49%;
     flex: 0 0 auto;
-}
-.right-col{
-    margin-right: 2%;
 }
 .bootom-panel{
     display: flex;
