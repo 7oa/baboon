@@ -9,7 +9,7 @@
             <div class="uploadphoto-data" v-else>
                 <vue-draggable-resizable class="photo-resize"
                                          :resizable="false"
-                                         :w.sync="propWidth" :h.sync="propHeight">
+                                         :style="{ width: propWidth + 'px', height: propHeight + 'px' }">
                     <div class="foto" :style="{ backgroundImage: 'url(' + image + ')', width: propWidth + 'px', height: propHeight + 'px' }">
                     </div>
                 </vue-draggable-resizable>
@@ -60,10 +60,10 @@
         },
         computed:{
             propWidth(){
-                return this.width*this.value/100
+                return  parseInt((this.width*this.value/100)/(this.height/618))
             },
             propHeight(){
-                return this.height*this.value/100
+                return parseInt(618*this.value/100)
             },
 
         },
@@ -151,7 +151,7 @@
     .foto{
         width: 100%;
         height: 100%;
-        background-size: cover;
+        background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
         position: relative;

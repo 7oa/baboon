@@ -10,17 +10,16 @@
                         </select>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="view-list">
-                        <a @click="view='grid'" class="view view_grid" :class="view=='grid'?'active':''"></a>
-                        <a @click="view='list'" class="view view_list" :class="view=='list'?'active':''"></a>
-                    </div>
-
-                </div>
+                <!--<div class="col">-->
+                    <!--<div class="view-list">-->
+                        <!--<a @click="view='grid'" class="view view_grid" :class="view=='grid'?'active':''"></a>-->
+                        <!--<a @click="view='list'" class="view view_list" :class="view=='list'?'active':''"></a>-->
+                    <!--</div>-->
+                <!--</div>-->
             </div>
         </div>
 
-        <transition-group name="bowtiestranz" tag="div" class="bowties" :class="view">
+        <div class="bowties" :class="view">
             <bowtie v-for="bowtieItem in filteredItems"
                     :key="bowtieItem.id"
                     :bowtieItem="bowtieItem"
@@ -28,7 +27,7 @@
                     :view = "view"
                     @click.native = "clickOnBowtie(bowtieItem.id,bowtieItem.url)">
             </bowtie>
-        </transition-group>
+        </div>
     </div>
 </template>
 <script>
@@ -87,6 +86,7 @@
     .bowties-bl{
         border: 1px solid #ccc;
         height: 615px;
+        overflow: hidden;
     }
     .tools{
         border-bottom: 1px solid #ccc;
@@ -103,7 +103,9 @@
     }
     .bowties{
         max-height: 554px;
-        overflow-y: auto;
+        overflow-y: scroll;
+        height: 100%;
+        align-content: flex-start;
         &.list{
 
         }
@@ -119,20 +121,6 @@
             flex:  0 0 auto;
             margin-right: 10px;
         }
-    }
-    .bowtiestranz{
-        &-move { transition: all 600ms ease-in-out 50ms }
-        &-enter-active { transition: all 300ms ease-out }
-
-        &-leave-active {
-            transition: all 200ms ease-in;
-            position: absolute;
-            z-index: 0;
-        }
-
-        &-enter,
-        &-leave-to { opacity: 0 }
-        &-enter { transform: scale(0.9) }
     }
     .view-list{
         display: flex;
