@@ -64,8 +64,7 @@
             },
             propHeight(){
                 return parseInt(618*this.value/100)
-            },
-
+            }
         },
         created(){
             BowtieService.$on("selectBowtie", (selectedBowtie) => {
@@ -107,14 +106,6 @@
     }
 </script>
 <style lang="scss" scoped>
-    .noimage{
-        background-image: url('/images/noavatar.png');
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-        width: 100%;
-        height: 300px;
-    }
     .photo-frame{
         width: 100%;
         height: 615px;

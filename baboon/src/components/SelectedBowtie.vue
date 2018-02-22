@@ -5,11 +5,7 @@
 </template>
 <script>
     export default {
-        props: ["bowtie"],
-        data(){
-            return{
-            }
-        }
+        props: ["bowtie"]
     }
 </script>
 <style lang="scss" scoped>
