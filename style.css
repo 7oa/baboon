@@ -1,0 +1,78 @@
+body{
+    font-family: 'Neucha', cursive;
+    color: #603c30;
+}
+.header{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    height: 100px;
+    box-sizing: content-box;
+}
+.header-wrapper{
+    position: relative;
+    height: 100%;
+}
+.logo{
+    position: absolute;
+    left: 368px;
+    bottom: 0;
+    width: 100px;
+    height: 100px;
+    background-image: url('images/logo.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.select{
+    position: absolute;
+    bottom: 0;
+    left: 499px;
+    height: 75px;
+    width: 165px;
+    background-image: url('images/select.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.vk-link{
+    position: absolute;
+    right: 10px;
+    bottom: 0;
+    font-size: 24px;
+    color: #4b322e;
+    transition: .5s;
+    display: none;
+}
+.vk-link:hover{
+    text-decoration: none;
+    color: #4b322e;
+    opacity: .8;
+}
+.wrapper{
+    margin: 0 auto;
+    width: 1000px;
+    padding-right: 10px;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+.content{
+    display: flex;
+    justify-content: space-between;
+}
+.right-col,
+.left-col{
+    width: 49%;
+    flex: 0 0 auto;
+}
+.bootom-panel{
+    display: flex;
+    justify-content: space-between;
+}
+.noimage{
+    background-image: url('images/noavatar.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 100%;
+    height: 300px;
+}
